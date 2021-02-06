@@ -1,0 +1,164 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  
+}
+/* body{
+ background: #18191A;
+  overflow: hidden;
+} */
+nav{
+    position: fixed;
+top: 32%;
+/* left: 10%; */
+transform: translate(-50%, -50%);
+}
+/* nav .drop-btn{
+  width: 400px;
+  background: #242526;
+  border-radius: 5px;
+  line-height: 55px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #b0b3b8;
+  padding: 0 20px;
+}
+nav .drop-btn span{
+  float: right;
+  line-height: 50px;
+  font-size: 28px;
+  cursor: pointer;
+}
+nav .tooltip{
+  position: absolute;
+  right: 20px;
+  bottom: -20px;
+  height: 15px;
+  width: 15px;
+  background: #242526;;
+  transform: rotate(45deg);
+  display: block;
+} */
+nav .tooltip.show{
+  display: block;
+}
+nav .wrapper{
+  position: absolute;
+  /* top: 65px; */
+  display: flex;
+  width: 250px;
+  overflow: hidden;
+  border-radius: 5px;
+ 
+  /* display: none; */
+  transition: all 0.3s ease;
+}
+nav .wrapper.show{
+  display: block;
+  display: flex;
+}
+.wrapper ul{
+  width: 250px;
+  list-style: none;
+  /* padding: 10px; */
+  transition: all 0.3s ease;
+}
+.wrapper ul li{
+  line-height: 55px;
+}
+.wrapper ul li a{
+  position: relative;
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0 10px;
+  display: flex;
+  border-radius: 8px;
+  align-items: center;
+  text-decoration: none;
+}
+.wrapper ul li:hover a, .icon{
+  background: #FFC000;
+  color: white;
+}
+.wrapper ul li:hover .icon{
+  background: white;
+  color: red;
+
+}
+ul li a .icon{
+  height: 40px;
+  width: 40px;
+  margin-right: 13px;
+  background: #ffffff1a;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%;
+}
+ul li a .icon span{
+  line-height: 40px;
+  font-size: 20px;
+  color: #b0b3b8;
+}
+ul li a i{
+  position: absolute;
+  right: 10px;
+  font-size: 25px;
+  pointer-events: none;
+}
+.wrapper ul.setting-drop,
+.wrapper ul.help-drop{
+  display: none;
+}
+.wrapper .arrow{
+  padding-left: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #b0b3b8;
+  cursor: pointer;
+}
+.wrapper .arrow span{
+  margin-right: 15px;
+}
+.card {
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  height: 350px;
+  margin: 1rem;
+  position: relative;
+  width: 300px;
+  border-radius: 10px;
+}
+.card img{
+  width: 300px;
+
+}
+.card h4{
+
+  margin-left: 10%;
+    margin-top: 5%;
+
+}
+.card a{
+
+    float: right;
+    margin-top: 3%;
+    width: 46px;
+    font-size: 27px;
+    color: orange;
+}
+.card {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
