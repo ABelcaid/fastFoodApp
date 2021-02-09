@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+
+<html lang="en" class="material-style layout-fixed">
+
+<head>
+    <title>Empire | B4+ admin template by Srthemesvilla</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Empire Bootstrap admin template made using Bootstrap 4, it has tons of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+    <meta name="keywords" content="Empire, bootstrap admin template, bootstrap admin panel, bootstrap 4 admin template, admin template">
+    <meta name="author" content="Srthemesvilla" />
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+    <!-- Icon fonts -->
+    <link rel="stylesheet" href="assets/fonts/fontawesome.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.css">
+    <link rel="stylesheet" href="assets/fonts/linearicons.css">
+    <link rel="stylesheet" href="assets/fonts/open-iconic.css">
+    <link rel="stylesheet" href="assets/fonts/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="assets/fonts/feather.css">
+
+    <!-- Core stylesheets -->
+    <link rel="stylesheet" href="assets/css/bootstrap-material.css">
+    <link rel="stylesheet" href="assets/css/shreerang-material.css">
+    <link rel="stylesheet" href="assets/css/uikit.css">
+
+    <!-- Libs -->
+    <link rel="stylesheet" href="assets/libs/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/libs/flot/flot.css">
+
+</head>
+
+<body>
+    <!-- [ Preloader ] Start -->
+    <div class="page-loader">
+        <div class="bg-primary"></div>
+    </div>
+    <!-- [ Preloader ] End -->
+
+    <!-- [ Layout wrapper ] Start -->
+    <div class="layout-wrapper layout-2">
+        <div class="layout-inner">
+            <!-- [ Layout sidenav ] Start -->
+            <div id="layout-sidenav" class="layout-sidenav sidenav sidenav-vertical bg-white logo-dark">
+                <!-- Brand demo (see assets/css/demo/demo.css) -->
+                <div class="app-brand demo">
+                    
+                    <a href="#" class="app-brand-text demo sidenav-text font-weight-normal ml-2">Dashboard</a>
+                    <a href="javascript:" class="layout-sidenav-toggle sidenav-link text-large ml-auto">
+                        <i class="ion ion-md-menu align-middle"></i>
+                    </a>
+                </div>
+                <div class="sidenav-divider mt-0"></div>
+
+                <!-- Links -->
+                <ul class="sidenav-inner py-1">
+
+                    <!-- Dashboards -->
+                    <li class="sidenav-item active">
+                        <a href="index.html" class="sidenav-link">
+                            <i class="sidenav-icon feather icon-home"></i>
+                            <div>Dashboards</div>
+                          
+                        </a>
+                    </li>
+
+                    <!-- Layouts -->
+                   
+
+                    <!-- UI elements -->
+                    <li class="sidenav-item">
+                        <a href="javascript:" class="sidenav-link sidenav-toggle">
+                            <i class="sidenav-icon feather icon-box"></i>
+                            <div>Catégorie</div>
+                        </a>
+                        <ul class="sidenav-menu">
+                            <li class="sidenav-item">
+                                <a href="#addcategory" data-toggle="modal" class="sidenav-link">
+                                    <div>Ajouter un catégorie</div>
+                                </a>
+                            </li>
+                            <!-- <li class="sidenav-item">
+                                <a href="bui_badges.html" class="sidenav-link">
+                                    <div>Badges</div>
+                                </a>
+                            </li> -->
+                        </ul>
+                    </li>
+                    <li class="sidenav-item">
+                        <a href="javascript:" class="sidenav-link sidenav-toggle">
+                            <i class="sidenav-icon feather icon-box"></i>
+                            <div>Sous Catégorie</div>
+                        </a>
+                        <ul class="sidenav-menu">
+                            <li class="sidenav-item">
+                                <a href="#addscategory"  data-toggle="modal" class="sidenav-link">
+                                    <div>Ajouter un Sous Catégorie</div>
+                                </a>
+                            </li>
+                            <!-- <li class="sidenav-item">
+                                <a href="bui_badges.html" class="sidenav-link">
+                                    <div>Badges</div>
+                                </a>
+                            </li> -->
+                        </ul>
+                    </li>
+                    <li class="sidenav-item">
+                        <a href="javascript:" class="sidenav-link sidenav-toggle">
+                            <i class="sidenav-icon feather icon-box"></i>
+                            <div>Produit</div>
+                        </a>
+                        <ul class="sidenav-menu">
+                            <li class="sidenav-item">
+                                <a href="#addproduit"  data-toggle="modal" class="sidenav-link">
+                                    <div>Ajouter un Produit</div>
+                                </a>
+                            </li>
+                            <li class="sidenav-item">
+                                <a href="#" class="sidenav-link">
+                                    <div>Lists de produits</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidenav-item">
+                        <a href="javascript:" class="sidenav-link sidenav-toggle">
+                            <i class="sidenav-icon feather icon-box"></i>
+                            <div>Code promo</div>
+                        </a>
+                        <ul class="sidenav-menu">
+                            <li class="sidenav-item">
+                                <a href="bui_alert.html" class="sidenav-link">
+                                    <div>Ajouter un Code promo</div>
+                                </a>
+                            </li>
+                            <!-- <li class="sidenav-item">
+                                <a href="bui_badges.html" class="sidenav-link">
+                                    <div>Badges</div>
+                                </a>
+                            </li> -->
+                        </ul>
+                    </li>
+                    <li class="sidenav-item">
+                        <a href="javascript:" class="sidenav-link sidenav-toggle">
+                            <i class="sidenav-icon feather icon-box"></i>
+                            <div>Service à table</div>
+                        </a>
+                        <ul class="sidenav-menu">
+                            <li class="sidenav-item">
+                                <a href="bui_alert.html" class="sidenav-link">
+                                    <div>Ajouter un Service à table</div>
+                                </a>
+                            </li>
+                            <!-- <li class="sidenav-item">
+                                <a href="bui_badges.html" class="sidenav-link">
+                                    <div>Badges</div>
+                                </a>
+                            </li> -->
+                        </ul>
+                    </li>
+
+                  
+                      
+                 
+
+                  
+
+                  
+                   
+                    
+                </ul>
+            </div>
+            <!-- [ Layout sidenav ] End -->
+            <!-- [ Layout container ] Start -->
+            <div class="layout-container">
+                <!-- [ Layout navbar ( Header ) ] Start -->
+                <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-dark container-p-x" id="layout-navbar">
+
+                    <!-- Brand demo (see assets/css/demo/demo.css) -->
+                    <a href="index.html" class="navbar-brand app-brand demo d-lg-none py-0 mr-4">
+                        <span class="app-brand-logo demo">
+                            <img src="assets/img/logo-dark.png" alt="Brand Logo" class="img-fluid">
+                        </span>
+                        <span class="app-brand-text demo font-weight-normal ml-2">Empire</span>
+                    </a>
+
+                    <!-- Sidenav toggle (see assets/css/demo/demo.css) -->
+                    <div class="layout-sidenav-toggle navbar-nav d-lg-none align-items-lg-center mr-auto">
+                        <a class="nav-item nav-link px-0 mr-lg-4" href="javascript:">
+                            <i class="ion ion-md-menu text-large align-middle"></i>
+                        </a>
+                    </div>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#layout-navbar-collapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="navbar-collapse collapse" id="layout-navbar-collapse">
+                        <!-- Divider -->
+                      
+
+                       
+
+                        <div class="navbar-nav align-items-lg-center ml-auto">
+                           
+
+                            
+
+                            <!-- Divider -->
+                            <div class="nav-item d-none d-lg-block text-big font-weight-light line-height-1 opacity-25 mr-3 ml-1">|</div>
+                            <div class="demo-navbar-user nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                                    <span class="d-inline-flex flex-lg-row-reverse align-items-center align-middle">
+                                     
+                                        <span class="px-1 mr-lg-2 ml-2 ml-lg-0">admin</span>
+                                    </span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    
+                                    <a href="javascript:" class="dropdown-item">
+                                        <i class="feather icon-power text-danger"></i> &nbsp; Log Out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <!-- [ Layout navbar ( Header ) ] End -->
+
+                <!-- [ Layout content ] Start -->
+                <div class="layout-content">
+
+                    <!-- [ content ] Start -->
+                    <div class="container-fluid flex-grow-1 container-p-y">
+                        <h4 class="font-weight-bold py-3 mb-0">Dashboard</h4>
+                      
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>nom de produit</th>
+                                            <th>prix</th>
+                                            <th>ingrediens</th>
+                                           
+                                          
+                                        </tr>
+                                    </thead>
+                                   
+                                    <tbody id="list">
+                                      
+                                     
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- 3rd row Start -->
+                            
+                           
+                            <!-- 3rd row Start -->
+                        </div>
+                    
+					</div>
+                    <!-- [ content ] End -->
+
+                    <!-- [ Layout footer ] Start -->
+                    <nav class="layout-footer footer bg-white">
+                        <div class="container-fluid d-flex flex-wrap justify-content-between text-center container-p-x pb-3">
+                            <div class="pt-3">
+                                <span class="footer-text font-weight-semibold">&copy; <a href="https://srthemesvilla.com" class="footer-link" target="_blank">Srthemesvilla</a></span>
+                            </div>
+                           
+                        </div>
+                    </nav>
+                    <!-- [ Layout footer ] End -->
+                </div>
+                <!-- [ Layout content ] Start -->
+            </div>
+            <!-- [ Layout container ] End -->
+        </div>
+        <!-- Overlay -->
+        <div class="layout-overlay layout-sidenav-toggle"></div>
+
+      
+
+            
+    </div>
+    
+    <div id="addcategory" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <form method="POST" action="/category/add">
+              <div class="modal-header">						
+                <h4 class="modal-title">ajouter une categorie</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              </div>
+              <div class="modal-body">	
+                                
+                <div class="form-group">
+                  <label>Nom de categorie</label>
+                  <input type="text" name="nom" class="form-control" >
+                </div>
+            
+              <div class="modal-footer">
+   
+                <button type="submit" class="btn btn-warning" >add</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+
+        <div id="addscategory" class="modal fade">
+            <div class="modal-dialog">
+              <div class="modal-content">
+             
+                <form method="POST" action="/sousCategory/add">
+                   
+                  <div class="modal-header">						
+                    <h4 class="modal-title">ajouter un sous categorie</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  </div>
+                  <div class="modal-body">	
+                                    
+                    <div class="form-group">
+                      <label>Nom de sous categorie</label>
+                    
+                      <input type="text" 	 name="nom" class="form-control" >
+                    </div>
+                    <select  class="form-control" id="menu" name="category"></select>
+                  <div class="modal-footer">
+                    
+                    <button type="submit" class="btn btn-warning" >add</button>
+                  </div>
+           
+                </form>
+              </div>
+            </div>
+        </div>
+    
+    <div id="addproduit" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+         
+            <form method="POST" action="/product/add">
+               
+              <div class="modal-header">						
+                <h4 class="modal-title">ajouter un produit</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              </div>
+              <div class="modal-body">	
+                                
+                <div class="form-group">
+                  <label>Nom de produit</label>
+                
+                  <input type="text" name="nom" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label>Prix</label>
+                  
+                    <input type="text" name="prix" class="form-control" >
+                  </div>
+                  <div class="form-group">
+                    <label>Ingrediens</label>
+                  
+                    <input type="text" name="ingrediens" class="form-control" >
+                  </div>
+                <select  class="form-control" id="scategory" name="sousCategory"></select>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-warning" >add</button>
+              </div>
+       
+            </form>
+          </div>
+        </div>
+    </div>
+
+    <!-- [ Layout wrapper] End -->
+
+    <!-- Core scripts -->
+    <script >
+//        let dropdown = document.getElementById('menu');
+// dropdown.length = 0;
+
+
+// let defaultOption = document.createElement('option');
+// defaultOption.text = 'Choisissez une categorie';
+
+// dropdown.add(defaultOption);
+// dropdown.selectedIndex = 0;
+
+
+
+// fetch('http://localhost:8080/category')  
+//   .then(  
+//     function(response) {  
+//       if (response.status !== 200) {  
+//         console.warn('Looks like there was a problem. Status Code: ' + 
+//           response.status);  
+//         return;  
+//       }
+
+//       // Examine the text in the response  
+//       response.json().then(function(data) {  
+//         let option;
+    
+//     	for (let i = 0; i < data.length; i++) {
+//           option = document.createElement('option');
+//       	  option.text = data[i].nom;
+//       	  option.value = data[i]._id;
+//       	  dropdown.add(option);
+//     	}    
+//       });  
+//     }  
+//   )  
+//   .catch(function(err) {  
+//     console.error('Fetch Error -', err);  
+//   }); 
+
+  let dropdowns = document.getElementById('scategory');
+dropdowns.length = 0;
+
+
+let defaultOptions = document.createElement('option');
+defaultOptions.text = 'Choisissez une sous categorie';
+
+dropdowns.add(defaultOptions);
+dropdowns.selectedIndex = 0;
+
+
+
+fetch('http://localhost:8080/sousCategory')  
+  .then(  
+    function(response) {  
+      if (response.status !== 200) {  
+        console.warn('Looks like there was a problem. Status Code: ' + 
+          response.status);  
+        return;  
+      }
+
+      // Examine the text in the response  
+      response.json().then(function(data) {  
+        let options;
+    
+    	for (let i = 0; i < data.length; i++) {
+          options = document.createElement('option');
+      	  options.text = data[i].nom;
+      	  options.value = data[i]._id;
+      	  dropdowns.add(options);
+    	}    
+      });  
+    }  
+  )  
+  .catch(function(err) {  
+    console.error('Fetch Error -', err);  
+  }); 
+
+
+  fetch_product();
+  async function fetch_product() {
+    
+    const response = await fetch('http://localhost:8080/product').then(
+      res=>{
+        res.json().then(
+          data=>{
+            console.log(data);
+            if(data.length > 0){
+              var temp = "";
+
+              data.forEach((u)=>{
+                temp +="<tr>";
+                temp +="<td>"+u.nom+"</td>";
+                temp +="<td>"+u.prix+"</td>";
+                temp +="<td>"+u.ingrediens+"</td></tr>";
+              })
+              document.getElementById("list").innerHTML = temp;
+            }
+          }
+        )
+      }
+    )
+     
+
+    
+    
+    } 
+
+    </script>
+    <script src="assets/js/pace.js"></script>
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/libs/popper/popper.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/sidenav.js"></script>
+    <script src="assets/js/layout-helpers.js"></script>
+    <script src="assets/js/material-ripple.js"></script>
+
+    <!-- Libs -->
+    <script src="assets/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="assets/libs/eve/eve.js"></script>
+    <script src="assets/libs/flot/flot.js"></script>
+    <script src="assets/libs/flot/curvedLines.js"></script>
+    <script src="assets/libs/chart-am4/core.js"></script>
+    <script src="assets/libs/chart-am4/charts.js"></script>
+    <script src="assets/libs/chart-am4/animated.js"></script>
+
+    <!-- Demo -->
+    <script src="assets/js/demo.js"></script><script src="assets/js/analytics.js"></script>
+    <script src="assets/js/pages/dashboards_index.js"></script>
+</body>
+
+
+</html>

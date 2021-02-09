@@ -24,9 +24,8 @@ router.route("/add").post((req, res) => {
     const nom = req.body.nom;
     const prix = req.body.prix;
     const ingrediens = req.body.ingrediens;
-    const codePromo = req.body.codePromo;
     const sousCategory = req.body.sousCategory;
-    const category = req.body.category
+
   
    
   
@@ -35,9 +34,7 @@ router.route("/add").post((req, res) => {
       nom,
       prix,
       ingrediens,
-      codePromo,
-      sousCategory,
-      category
+      sousCategory
 
      
     });

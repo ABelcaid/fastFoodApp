@@ -6,10 +6,15 @@ const router = express.Router();
 
 
 router.get('/', (req,res) =>{
-
+  
   Category.find()
   .then((category) => res.json(category))
   .catch((err) => res.status(400).json("Error :" + err));
+//   res.render('index', {
+                  
+    
+//  });
+
 });
 
 
@@ -31,6 +36,7 @@ router.route("/add").post((req, res) => {
       .save()
       .then(() => res.json("Category successfully added"))
       .catch((err) =>  res.status(400).json("Error :" + err));
+      res.redirect('/category')
   });
 
 
