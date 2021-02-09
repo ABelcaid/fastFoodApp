@@ -10,6 +10,14 @@ const router = express.Router();
 router.get('/', (req,res) =>{
   // res.render('index');
   SousCategory.find()
+  .populate('category')
+  .then((SousCategory) => res.json(SousCategory))
+  .catch((err) => res.status(400).json("Error :" + err));
+});
+
+router.get('/:idCtg', (req,res) =>{
+
+  SousCategory.find({category: `${req.params.idCtg}`})
   .then((SousCategory) => res.json(SousCategory))
   .catch((err) => res.status(400).json("Error :" + err));
 });
