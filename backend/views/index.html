@@ -80,12 +80,10 @@
                         </a>
                         <ul class="sidenav-menu">
                             <li class="sidenav-item">
-                                <!-- <a href="#addcategory" data-toggle="modal" class="sidenav-link">
+                                <a href="#addcategory" data-toggle="modal" class="sidenav-link">
                                     <div>Ajouter un catégorie</div>
-                                </a> -->
-                                <button type="button" id="call " data-toggle="modal" data-target="#addcategory">
-                                    <img class="call" src="img/Groupe 12.png"></img>
-                                </button>
+                                </a>
+                                
                             </li>
                             <!-- <li class="sidenav-item">
                                 <a href="bui_badges.html" class="sidenav-link">
@@ -101,12 +99,9 @@
                         </a>
                         <ul class="sidenav-menu">
                             <li class="sidenav-item">
-                                <!-- <a href="#addscategory"  data-toggle="modal" class="sidenav-link">
+                                <a href="#addscategory"  data-toggle="modal" class="sidenav-link">
                                     <div>Ajouter un Sous Catégorie</div>
-                                </a> -->
-                                <button type="button" id="call " data-toggle="modal" data-target="#addscategory">
-                                    <img class="call" src="img/Groupe 12.png"></img>
-                                </button>
+                                </a>
                             </li>
                             <!-- <li class="sidenav-item">
                                 <a href="bui_badges.html" class="sidenav-link">
@@ -140,7 +135,7 @@
                         </a>
                         <ul class="sidenav-menu">
                             <li class="sidenav-item">
-                                <a href="bui_alert.html" class="sidenav-link">
+                                <a href="#addcode" data-toggle="modal" class="sidenav-link">
                                     <div>Ajouter un Code promo</div>
                                 </a>
                             </li>
@@ -297,7 +292,7 @@
             
     </div>
     
-    <div id="addcategory" class="modal fade">
+    <div id="addcategory" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <form method="POST" action="/category/add">
@@ -317,11 +312,13 @@
                 <button type="submit" class="btn btn-warning" >add</button>
               </div>
             </form>
+            </div>
           </div>
         </div>
     </div>
+    
 
-        <div id="addscategory" class="modal fade">
+        <div id="addscategory" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
              
@@ -345,6 +342,7 @@
                   </div>
            
                 </form>
+                </div>
               </div>
             </div>
         </div>
@@ -364,7 +362,7 @@
                 <div class="form-group">
                   <label>Nom de produit</label>
                 
-                  <input type="text" name="nom" class="form-control" >
+                  <input type="text" name="nomx" class="form-control" >
                 </div>
                 <div class="form-group">
                     <label>Prix</label>
@@ -382,6 +380,41 @@
               </div>
        
             </form>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+
+    <div id="addcode" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+         
+            <form method="POST" action="/Codepromo/add">
+               
+              <div class="modal-header">						
+                <h4 class="modal-title">ajouter un produit</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              </div>
+              <div class="modal-body">	
+                                
+                <div class="form-group">
+                  <label>code promo</label>
+                
+                  <input type="text" name="code" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label>Pourcentage</label>
+                  
+                    <input type="text" name="pourcentage" class="form-control" >
+                  </div>
+                  
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-warning" >add</button>
+              </div>
+       
+            </form>
+            </div>
           </div>
         </div>
     </div>
