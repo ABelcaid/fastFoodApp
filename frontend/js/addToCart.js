@@ -293,11 +293,53 @@ checkout.addEventListener('click', () => {
 
     table = document.getElementById('table').value;
     total = document.querySelector('.cart__total').innerText;
+    var intTotal = parseInt(total);
+
+    
+
+
+
+
+
+
+
+
+    let y = 10;
+    let x = true;
+
+    if (x) {
+
+      let tmp = (intTotal*y)/100;
+
+      let totalAfterCode = intTotal - tmp;
+
+      console.log(totalAfterCode);
+
+      total = document.querySelector('.cart__total').innerText = totalAfterCode
+
+
+
+
+      
+    } else {
+      
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     localStorage.setItem('table', table);
     localStorage.setItem('total', total);
 
-    window.location.href = "payment.html";
+    // window.location.href = "payment.html";
 
    
     // let xcart= Storage.getCart();
