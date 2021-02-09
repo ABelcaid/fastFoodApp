@@ -8,7 +8,7 @@ const router = express.Router();
 
 
 router.get('/', (req,res) =>{
-
+  // res.render('index');
   SousCategory.find()
   .populate('category')
   .then((SousCategory) => res.json(SousCategory))
@@ -40,6 +40,7 @@ router.route("/add").post((req, res) => {
       .save()
       .then(() => res.json("Sous Category successfully added"))
       .catch((err) =>  res.status(400).json("Error :" + err));
+      res.redirect('/sousCategory')
   });
 
 

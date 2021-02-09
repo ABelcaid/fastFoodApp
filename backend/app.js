@@ -1,8 +1,11 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 const mongoose = require('mongoose');
-var cors = require('cors')
-var bodyParser = require('body-parser')
+// const ejs = require('ejs');
+const path = require('path');
+var cors = require('cors');
+var bodyParser = require('body-parser');
+
 
 const port = process.env.PORT || 8080;
 
@@ -16,6 +19,8 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // parse requests of content-type - application/json
 app.use(bodyParser.json())
 
+app.use(express.static('views'))
+app.use(express.static(__dirname + 'views'));
 
 
 
@@ -36,17 +41,20 @@ mongoose.connect('mongodb://localhost:27017/fastFoodDB' , {
 const categoryRoute = require('./routes/category');
 const sousCategoryRoute = require('./routes/sousCategory');
 const productRoute = require('./routes/product');
+const codepromoRoute = require('./routes/codepromo');
 
 app.use('/category' ,categoryRoute);
 app.use('/sousCategory' ,sousCategoryRoute);
 app.use('/product' ,productRoute);
+app.use('/Codepromo' ,codepromoRoute);
 
 
 
 
 
 
-
+// app.set('views',path.join(__dirname,'views')); 
+// app.set('view engine', 'ejs'); 
 
 
 

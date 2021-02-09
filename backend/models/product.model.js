@@ -18,14 +18,11 @@ const Product = new Schema({
         required: true,
         trim: true,
     },
-    codePromo: {
-        type: String,
-    },
+   
     sousCategory: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'SousCategory'
     },
-    
 
 }, {
     versionKey: false
