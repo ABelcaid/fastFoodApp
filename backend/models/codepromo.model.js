@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const Codepromo = new Schema(
   {
-    nom: {
+    code: {
       type: String,
       required: true,
       trim: true,
@@ -15,9 +15,9 @@ const Codepromo = new Schema(
         default: true,
        
       },
-    product: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'product'
+      pourcentage: {
+        type: Number,
+        required: true,
     },
   },
   {

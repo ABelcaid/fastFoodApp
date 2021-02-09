@@ -16,18 +16,18 @@ router.get('/', (req,res) =>{
 // add category
 
 router.route("/add").post((req, res) => {
-  const nom = req.body.nom;
+  const code = req.body.code;
   const isValid = req.body.isValid;
-  const product = req.body.product;
+  const pourcentage = req.body.pourcentage;
 
   
    
   
     const CodepromoPush = new Codepromo({
       
-      nom,
+      code,
       isValid,
-      product
+      pourcentage
 
      
     });
