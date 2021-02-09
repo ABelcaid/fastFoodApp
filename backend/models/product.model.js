@@ -25,10 +25,7 @@ const Product = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'SousCategory'
     },
-    category: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Category'
-    },
+    
 
 }, {
     versionKey: false
