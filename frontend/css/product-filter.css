@@ -24,16 +24,15 @@
   .card h4{
   
     margin-left: 10%;
-      margin-top: 5%;
+      margin-top: 52%;
   
   }
   .card a{
   
-      float: right;
-      margin-top: 3%;
+      text-align: center;
       width: 46px;
       font-size: 27px;
-      color: orange;
+  
   }
   .card {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -76,8 +75,8 @@
     display: block;
     position: relative;
     /* background of menu items (default state) */
-    background: blue;
-    color: white;
+    /* background: blue; */
+    color: black;
     padding: 14px 10px;
     color: #2d2b2b;
     text-decoration: none;
@@ -85,12 +84,12 @@
 
 
 .nestedsidemenu ul li a:link, .nestedsidemenu ul li a:visited {
-    color: white;
+    color: black;
 }
 
 /* Top level menu items link style on hover and when active */
 .nestedsidemenu ul li:hover > a {
-    background: red;
+    background: #fec711;
 }
 
 /* Sub ULs style */
@@ -129,7 +128,7 @@
 
 /* Sub Levels link style on hover and when active */
 .nestedsidemenu ul ul li:hover > a {
-    background: #52616a;
+    background:#fec711
 }
 
 /* Sub Levels UL style on hover */
@@ -142,7 +141,7 @@
     font: normal 14px 'Bitter', sans-serif;
     padding: 10px;
     margin: 0;
-    background: #4ea1d3;
+    /* background: #4ea1d3; */
     border-right: none;
     border-top-width: 0;
 }
@@ -234,3 +233,4 @@
     }
 
 
+}
