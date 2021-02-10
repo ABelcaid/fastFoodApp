@@ -40,6 +40,18 @@ router.route("/add").post((req, res) => {
   });
 
 
+
+router.route("/update/:id").put((req, res) => {
+
+
+    
+  
+    Codepromo.updateOne({_id: req.params.id}, {isValid : false})
+    .then(() => res.status(201).json("codepromo updated "))
+    .catch((err) =>  res.status(400).json("Error :" + err));
+})
+
+
   
 
 

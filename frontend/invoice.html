@@ -1,6 +1,4 @@
-
-  
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -80,9 +78,9 @@
 }
 
 .invoice-table thead tr td {
-  font-size: 12px;
+  font-size: 20px;
   letter-spacing: 1px;
-  color: grey;
+  color: black;
   padding: 8px 0;
 }
 
@@ -142,11 +140,8 @@
 
 /* --------------this is for print result---------- */
 @media print {
-            body * {
-                visibility: hidden;
-            }
-            .invoice-card * {
-                visibility: visible;
+            .btn{
+              display: none;
             }
         }
 
@@ -187,7 +182,7 @@
             <thead style="border-top: 0.5px dashed grey;">
                 <tr>
                   <td>Total</td>
-                  <td id="total">130  </td>
+                  <td id="total">0  </td>
                   <td>DH  </td>
                 </tr>
             </thead>

@@ -42,19 +42,20 @@ const categoryRoute = require('./routes/category');
 const sousCategoryRoute = require('./routes/sousCategory');
 const productRoute = require('./routes/product');
 const codepromoRoute = require('./routes/codepromo');
+const tableRoute = require('./routes/table');
+const pointFideliteRoute = require('./routes/pointFidelite');
 
 app.use('/category' ,categoryRoute);
 app.use('/sousCategory' ,sousCategoryRoute);
 app.use('/product' ,productRoute);
 app.use('/Codepromo' ,codepromoRoute);
+app.use('/table' ,tableRoute);
+app.use('/pointFidelite' ,pointFideliteRoute);
 
 
 
 
 
-
-// app.set('views',path.join(__dirname,'views')); 
-// app.set('view engine', 'ejs'); 
 
 
 
