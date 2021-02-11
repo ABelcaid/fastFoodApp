@@ -6,6 +6,7 @@ const path = require('path');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 
+const logger = require('./config/logger')
 
 const port = process.env.PORT || 8080;
 
@@ -27,9 +28,9 @@ app.use(express.static(__dirname + 'views'));
 mongoose.connect('mongodb://localhost:27017/fastFoodDB' , {
   useNewUrlParser: true
 }).then(() => {
-  console.log("Successfully connected to the database");    
+  logger.info("Successfully connected to the database");    
 }).catch(err => {
-  console.log('Could not connect to the database. Exiting now...', err);
+  logger.error('Could not connect to the database. Exiting now...', err);
   process.exit();
 });
 

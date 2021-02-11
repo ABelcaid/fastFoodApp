@@ -5,7 +5,7 @@ const router = express.Router();
 // show all Codepromo
 
 
-router.get('/idClient', (req,res) =>{
+router.get('/:idClient', (req,res) =>{
 
     PointFidelite.findOne({ idClient: req.params.idClient })
   .then((PointFidelite) => res.json(PointFidelite))
@@ -40,15 +40,15 @@ router.route("/add").post((req, res) => {
 
 
 
-// router.route("/update/:numTable").put((req, res) => {
+router.route("/update/:cartFidilite").put((req, res) => {
 
 
     
   
-//     Table.updateOne({numTable: req.params.numTable}, {isOcuped : true})
-//     .then(() => res.status(201).json("table updated "))
-//     .catch((err) =>  res.status(400).json("Error :" + err));
-// })
+    PointFidelite.updateOne({idClient: req.params.cartFidilite},{nbPoint: req.body.nbPoint})
+    .then(() => res.status(201).json("point updated "))
+    .catch((err) =>  res.status(400).json("Error :" + err));
+})
 
 
   

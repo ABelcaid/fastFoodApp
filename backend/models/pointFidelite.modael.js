@@ -9,6 +9,7 @@ const PointFidelite = new Schema(
     },
     nbPoint :{
         type: Number,
+        defult : 0
        
     }
     

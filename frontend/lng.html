@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-    <title></title>
+    <title>lang</title>
   </head>
   <body style="overflow: hidden;">
     <div class="container-fluid ml-5 nav-continer">
@@ -20,8 +20,10 @@
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
 
-                  <li class="nav-item ">
-                FR
+                  <li class="nav-item dropdown">
+
+                          FR
+                     
                   </li>
 
               </ul>
@@ -30,27 +32,31 @@
   </div>
     <div class="quiz">
 
-      <form action="" method="">
+    
 
       <div class="quiz-slide active">
         <div class="mcd-logo">
           <img src="img/mcd-logo.png" alt="" srcset="">
       </div>
         <div class="question">
-          <p id="question1"></p>
+          <p>Choix du langue</p>
         </div>
         <div class="answers">
           <ul>
             <li class="btn btn-warning">
               <label>
-                <input name="commandeType" type="radio"  value="surPlace">
-                <span id="choix1"></span>
+                <a href="mode-commande.html?lang=ar">AR</a>
+               
               </label>
             </li>
             <li class="btn btn-warning">
+                <label>
+                    <a href="mode-commande.html?lang=en">EN</a>
+                </label>
+              </li>
+            <li class="btn btn-warning">
               <label>
-                <input name="commandeType" type="radio" value="emporter">
-                <span id="choix2" ></span>
+                <a href="mode-commande.html?lang=fr">FR</a>
               </label>
             </li>
          
@@ -58,33 +64,8 @@
         </div>
 
       </div>
-      <div class="quiz-slide ">
-        <div class="mcd-logo">
-          <img src="img/mcd-logo.png" alt="" srcset="">
-      </div>
-        <div class="question">
-          <p id="choixPay"></p>
-        </div>
-        <div class="answers">
-          <ul>
-            <li class="btn btn-warning">
-              <label>
-                <input name="paiementMethode" type="radio" value="especes">
-                <span id="choix3"> </span>
-              </label>
-            </li>
-            <li class="btn btn-warning">
-              <label>
-                <input name="paiementMethode" type="radio" value="card">
-                <span id="choix4"> </span>
-              </label>
-            </li>
-         
-          </ul>
-        </div>
-
-      </div>
-    </form>
+    
+ 
     </div>
 
 
@@ -99,7 +80,6 @@
     </script>
 
     <script src="js/index.js"></script>
-    <script src="js/translate.js"></script>
   </body>
 
 

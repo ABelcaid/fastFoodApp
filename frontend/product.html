@@ -11,10 +11,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <!-- StyleSheet -->
+    <script src="https://kit.fontawesome.com/c2035ffa68.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="css/addToCart.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/product-filter.css" />
-    <title>Shopping Cart Project</title>
+    <title>Product</title>
 </head>
 
 <body>
@@ -71,6 +73,16 @@
 
                   <!-- Products -->
     <section class="products">
+      
+      <ul style="
+      margin-left: 88%;
+  " class="nav__list">
+        <div class="cart__icon">
+            <span class="item__total">0</span>
+            <img src="img/cart.png" alt="" srcset="">
+
+        </div>
+    </ul>
         <div class="product__center">
             <!-- Single Product -->
             <!-- <div class="product">
@@ -120,13 +132,6 @@
 
         <!-- add to cart icon  -->
 
-        <ul style="margin-left: 63%; position: fixed; margin-top: 6%;" class="nav__list">
-            <div class="cart__icon">
-                <span class="item__total">0</span>
-                <img src="img/cart.png" alt="" srcset="">
-
-            </div>
-        </ul>
 
     </section>
                 
@@ -146,7 +151,7 @@
     <section class="cart__overlay">
         <div class="cart">
             <span class="close__cart">
-                close
+              <i class="fas fa-times"></i>
             </span>
             <h1>Your Cart</h1>
             <div class="cart__centent">

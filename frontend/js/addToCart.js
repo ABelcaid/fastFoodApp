@@ -13,6 +13,8 @@ const clearCartBtn = document.querySelector(".clear__cart");
 const itemTotals = document.querySelector(".item__total");
 
 
+
+
 let category_menu = document.querySelector('.category-menu');
 
 
@@ -51,16 +53,20 @@ class UI {
     let results = "";
     products.forEach(({
       nom,
+      img,
+      ingrediens,
       prix,
       _id
     }) => {
       results += `<!-- Single Product -->
       <div class="product">
         <div class="image__container">
-          <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_960_720.jpg" alt="" />
+          <img src="${img}" alt="" />
         </div>
         <div class="product__footer">
           <h1>${nom}</h1>
+
+          <h2>${ingrediens}</h2>
           
           <div class="bottom">
             <div class="btn__group">
@@ -117,13 +123,21 @@ class UI {
   setItemValues(cart) {
     let tempTotal = 0;
     let itemTotal = 0;
+    let pointTotal = 0
 
     cart.map(item => {
+      pointTotal += item.points * item.amount;
       tempTotal += item.prix * item.amount;
       itemTotal += item.amount;
     });
     cartTotal.innerText = parseFloat(tempTotal.toFixed(2));
     itemTotals.innerText = itemTotal;
+
+    // add total points to localStorage
+
+    localStorage.setItem("pointsTotals",pointTotal);
+
+ 
   }
 
   addCartItem({
@@ -141,16 +155,16 @@ class UI {
           </div>
           <div>
             <span class="increase" data-id=${_id}>
-             +
+            <i class="fas fa-chevron-up"></i>
             </span>
             <p class="item__amount">1</p>
             <span class="decrease" data-id=${_id}>
-          -
+            <i class="fas fa-chevron-down"></i>
             </span>
           </div>
 
             <span class="remove__item" data-id=${_id}>
-            delete
+            <i class="fas fa-trash"></i>
             </span>
 
         </div>`;
@@ -440,7 +454,11 @@ axios.put(`http://localhost:8080/table/update/${table}`)
   localStorage.setItem('table', table);
   localStorage.setItem('total', total);
 
-  window.location.href = "payment.html";
+  setTimeout(() => {
+    window.location.href = "payment.html";
+  },1000)
+
+ 
 
 
   let xcart = Storage.getCart();
