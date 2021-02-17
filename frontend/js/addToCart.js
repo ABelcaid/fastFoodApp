@@ -13,6 +13,8 @@ const clearCartBtn = document.querySelector(".clear__cart");
 const itemTotals = document.querySelector(".item__total");
 
 
+
+
 let category_menu = document.querySelector('.category-menu');
 
 
@@ -20,16 +22,16 @@ let category_menu = document.querySelector('.category-menu');
 
 
 axios.get('http://localhost:8080/category')
-.then(function (response) {
-  
+  .then(function (response) {
+
     response.data.forEach(element => {
-        category_menu.innerHTML += `<li class="category"><a href="sousCategory.html?id=${element._id}">${element.nom}</a></li>`
-    
+      category_menu.innerHTML += `<li class="category"><a href="sousCategory.html?id=${element._id}">${element.nom}</a></li>`
+
     });
-    
-}).catch(function (err) {
+
+  }).catch(function (err) {
     console.log(err);
-});
+  });
 
 
 
@@ -49,14 +51,22 @@ let buttonDOM = [];
 class UI {
   displayProducts(products) {
     let results = "";
-    products.forEach(({ nom, prix, _id }) => {
+    products.forEach(({
+      nom,
+      img,
+      ingrediens,
+      prix,
+      _id
+    }) => {
       results += `<!-- Single Product -->
       <div class="product">
         <div class="image__container">
-          <img src="https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_960_720.jpg" alt="" />
+          <img src="${img}" alt="" />
         </div>
         <div class="product__footer">
           <h1>${nom}</h1>
+
+          <h2>${ingrediens}</h2>
           
           <div class="bottom">
             <div class="btn__group">
@@ -91,7 +101,10 @@ class UI {
         e.target.disabled = true;
 
         // Get product from products
-        const cartItem = { ...Storage.getProduct(id), amount: 1 };
+        const cartItem = {
+          ...Storage.getProduct(id),
+          amount: 1
+        };
 
         // Add product to cart
         cart = [...cart, cartItem];
@@ -110,16 +123,28 @@ class UI {
   setItemValues(cart) {
     let tempTotal = 0;
     let itemTotal = 0;
+    let pointTotal = 0
 
     cart.map(item => {
+      pointTotal += item.points * item.amount;
       tempTotal += item.prix * item.amount;
       itemTotal += item.amount;
     });
     cartTotal.innerText = parseFloat(tempTotal.toFixed(2));
     itemTotals.innerText = itemTotal;
+
+    // add total points to localStorage
+
+    localStorage.setItem("pointsTotals",pointTotal);
+
+ 
   }
 
-  addCartItem({ prix, nom, _id }) {
+  addCartItem({
+    prix,
+    nom,
+    _id
+  }) {
     const div = document.createElement("div");
     div.classList.add("cart__item");
 
@@ -130,22 +155,16 @@ class UI {
           </div>
           <div>
             <span class="increase" data-id=${_id}>
-              <svg>
-                <use xlink:href="../img/sprite.svg#icon-angle-up"></use>
-              </svg>
+            <i class="fas fa-chevron-up"></i>
             </span>
             <p class="item__amount">1</p>
             <span class="decrease" data-id=${_id}>
-              <svg>
-                <use xlink:href="../img/sprite.svg#icon-angle-down"></use>
-              </svg>
+            <i class="fas fa-chevron-down"></i>
             </span>
           </div>
 
             <span class="remove__item" data-id=${_id}>
-              <svg>
-                <use xlink:href="../img/sprite.svg#icon-trash"></use>
-              </svg>
+            <i class="fas fa-trash"></i>
             </span>
 
         </div>`;
@@ -193,7 +212,7 @@ class UI {
         this.removeItem(id);
         cartContent.removeChild(target.parentElement);
       } else if (target.classList.contains("increase")) {
-        const id =target.dataset.id;
+        const id = target.dataset.id;
         let tempItem = cart.find(item => item._id === id);
         tempItem.amount++;
         Storage.saveCart(cart);
@@ -267,9 +286,8 @@ class Storage {
   }
 
   static getCart() {
-    return localStorage.getItem("cart")
-      ? JSON.parse(localStorage.getItem("cart"))
-      : [];
+    return localStorage.getItem("cart") ?
+      JSON.parse(localStorage.getItem("cart")) : [];
   }
 }
 
@@ -284,29 +302,172 @@ document.addEventListener("DOMContentLoaded", async () => {
   Storage.saveProduct(products);
   ui.getButtons();
   ui.cartLogic();
+
+  serviceTable =document.getElementById('serviceTable');
+
+  axios.get('http://localhost:8080/table')
+.then(function (response) {
+
+  // check if codepromo in db 
+
+  for (let i = 0; i < response.data.length; i++) {
+
+    if (response.data[i].isOcuped == false) {
+
+      serviceTable.innerHTML+=`<option value="${response.data[i].numTable}">${response.data[i].numTable}</option>`
+      
+    }
+
+ 
+
+
+
+  }
+
+
+
+
+
+}).catch(function (err) {
+  console.log(err);
 });
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 checkout = document.querySelector('.checkout');
 
 checkout.addEventListener('click', () => {
 
-    table = document.getElementById('table').value;
-    total = document.querySelector('.cart__total').innerText;
 
-    localStorage.setItem('table', table);
-    localStorage.setItem('total', total);
 
+  let table = document.getElementById('serviceTable').value;
+  total = document.querySelector('.cart__total').innerText;
+  var intTotal = parseInt(total);
+  let codePromo = document.getElementById('codePromo').value;
+
+
+  let pourcentage = 0;
+
+
+  // code promo 
+
+
+  axios.get('http://localhost:8080/Codepromo')
+    .then(function (response) {
+
+      // check if codepromo in db 
+
+      for (let i = 0; i < response.data.length; i++) {
+
+
+        if (codePromo === response.data[i].code && response.data[i].isValid == true) {
+
+          pourcentage = response.data[i].pourcentage;
+          codePromoId = response.data[i]._id;
+          let tmp = (intTotal * pourcentage) / 100;
+          let totalAfterCode = intTotal - tmp;
+
+          total = document.querySelector('.cart__total').innerText = totalAfterCode
+
+
+          // set isvalid to false in db 
+          axios.put(`http://localhost:8080/Codepromo/update/${codePromoId}`)
+            .then(function (response) {
+              console.log('updated');
+            })
+            .catch(function (err) {
+              console.log(err);
+            });
+
+
+        } else {
+          setTimeout(() => {console.log('code invalid or expaired ...!')},300)
+
+          
+
+        }
+
+
+      }
+
+
+
+
+
+    }).catch(function (err) {
+      console.log(err);
+    });
+
+
+
+// --------------------- service a table  --------------------------------------
+
+
+
+// set ocuped to ture after checkout 
+
+
+axios.put(`http://localhost:8080/table/update/${table}`)
+            .then(function (response) {
+              console.log('updated');
+            })
+            .catch(function (err) {
+              console.log(err);
+            });
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  localStorage.setItem('table', table);
+  localStorage.setItem('total', total);
+
+  setTimeout(() => {
     window.location.href = "payment.html";
+  },1000)
 
-   
-    // let xcart= Storage.getCart();
-
-
-
-   
+ 
 
 
-    
+  let xcart = Storage.getCart();
+
+
+
+
+
+
+
 
 })

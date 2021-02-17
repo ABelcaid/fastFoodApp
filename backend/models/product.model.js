@@ -6,7 +6,7 @@ const Product = new Schema({
     nom: {
         type: String,
         required: true,
-        trim: true,
+       
     },
     prix: {
         type: Number,
@@ -23,8 +23,8 @@ const Product = new Schema({
     ingrediens: {
         type: String,
         required: true,
-        trim: true,
     },
+<<<<<<< HEAD
 
     img: {
         type: String,
@@ -32,6 +32,18 @@ const Product = new Schema({
         trim: true,
     },
    
+=======
+    img: {
+        type: String,
+        required: true,
+    },
+
+    points: {
+        type: Number,
+        required: true,
+      
+    },
+>>>>>>> 2416134464b3e07891f6886a8ce1ee1744fc8f31
     sousCategory: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'SousCategory'

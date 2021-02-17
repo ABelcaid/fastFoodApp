@@ -31,21 +31,60 @@ router.get('/showAll', (req,res) =>{
 router.route("/add").post((req, res) => {
     const nom = req.body.nom;
     const prix = req.body.prix;
+    const img = req.body.img;
+
+    // calcule d pint de fidelite 
+
+    let points = 0
+
+    if (prix >= 7 && prix <= 20) {
+
+      points = 5;
+      
+    } else if(prix >= 21 && prix <= 50) {
+
+      points = 12;
+
+    }else {
+      points = 20;
+    }
     const ingrediens = req.body.ingrediens;
     const sousCategory = req.body.sousCategory;
+<<<<<<< HEAD
     const pointfidelite = req.body.pointfidelite;
     const img = req.body.img;
   
+=======
+
+
+    // calucle point de fidelite 
+
+    
+
+  console.log(  nom,
+    prix,
+    ingrediens,
+    img,
+    points,
+    sousCategory);
+   
+>>>>>>> 2416134464b3e07891f6886a8ce1ee1744fc8f31
    
   
     const productPush = new Product({
-      
+       
       nom,
       prix,
       ingrediens,
+<<<<<<< HEAD
       sousCategory,
       pointfidelite,
       img
+=======
+      img,
+      points,
+      sousCategory
+>>>>>>> 2416134464b3e07891f6886a8ce1ee1744fc8f31
 
      
     });

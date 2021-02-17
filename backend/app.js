@@ -6,6 +6,7 @@ const path = require('path');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 
+const logger = require('./config/logger')
 
 const port = process.env.PORT || 8080;
 
@@ -27,9 +28,9 @@ app.use(express.static(__dirname + 'views'));
 mongoose.connect('mongodb://localhost:27017/fastFoodDB' , {
   useNewUrlParser: true, useUnifiedTopology: true
 }).then(() => {
-  console.log("Successfully connected to the database");    
+  logger.info("Successfully connected to the database");    
 }).catch(err => {
-  console.log('Could not connect to the database. Exiting now...', err);
+  logger.error('Could not connect to the database. Exiting now...', err);
   process.exit();
 });
 
@@ -43,20 +44,25 @@ const sousCategoryRoute = require('./routes/sousCategory');
 const productRoute = require('./routes/product');
 const codepromoRoute = require('./routes/codepromo');
 const tableRoute = require('./routes/table');
+<<<<<<< HEAD
+=======
+const pointFideliteRoute = require('./routes/pointFidelite');
+>>>>>>> 2416134464b3e07891f6886a8ce1ee1744fc8f31
 
 app.use('/category' ,categoryRoute);
 app.use('/sousCategory' ,sousCategoryRoute);
 app.use('/product' ,productRoute);
 app.use('/Codepromo' ,codepromoRoute);
 app.use('/table' ,tableRoute);
+<<<<<<< HEAD
+=======
+app.use('/pointFidelite' ,pointFideliteRoute);
+>>>>>>> 2416134464b3e07891f6886a8ce1ee1744fc8f31
 
 
 
 
 
-
-// app.set('views',path.join(__dirname,'views')); 
-// app.set('view engine', 'ejs'); 
 
 
 

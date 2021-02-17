@@ -19,11 +19,19 @@
 
 
 <div class="container">
-  <div class="info">
-    <h1 >Total a payer : <span class="total"></span> DH </h1> 
-    <span></span>
-  </div>
+
   <form class="modal">
+
+    <div class="info">
+      <h1 >Total a payer : <span class="total"></span> DH </h1> 
+      <span></span>
+    </div>
+    <div class="info">
+      <h1 > vous avez ganger : <span class="totalPoints"></span> Point </h1> 
+      <label>Enter votre cart is vous avez un </label>
+
+      <span><input type="text"  id="cartFidilite" name="cartFidilite"></span>
+    </div>
 
     <header class="header">
       <div class="card-type">
@@ -72,7 +80,7 @@
       </div>
     </div>
     <footer class="footer">
-    <button class="button" id="pay" type="submit" >Complete Payment</button>
+    <button class="button" id="pay" type="button" >Complete Payment</button>
       
     </footer>
 
@@ -91,6 +99,7 @@
 
 
 
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

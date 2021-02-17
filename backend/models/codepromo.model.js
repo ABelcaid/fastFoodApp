@@ -6,9 +6,7 @@ const Codepromo = new Schema(
   {
     code: {
       type: String,
-      required: true,
-      trim: true,
-      minlenght: 3,
+    
     },
     isValid: {
         type: Boolean,
@@ -17,8 +15,8 @@ const Codepromo = new Schema(
       },
       pourcentage: {
         type: Number,
-        required: true,
-    },
+       
+    }
   },
   {
     versionKey: false
