@@ -13,7 +13,20 @@ const Product = new Schema({
         required: true,
        
     },
+
+    pointfidelite: {
+        type: Number,
+        required: true,
+       
+    },
+
     ingrediens: {
+        type: String,
+        required: true,
+        trim: true,
+    },
+
+    img: {
         type: String,
         required: true,
         trim: true,

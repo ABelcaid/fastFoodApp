@@ -3,14 +3,14 @@
 <html lang="en" class="material-style layout-fixed">
 
 <head>
-    <title>Empire | B4+ admin template by Srthemesvilla</title>
+    <title>dashboard</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="Empire Bootstrap admin template made using Bootstrap 4, it has tons of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
     <meta name="keywords" content="Empire, bootstrap admin template, bootstrap admin panel, bootstrap 4 admin template, admin template">
-    <meta name="author" content="Srthemesvilla" />
+    <meta name="author" content="dashboard" />
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
 
     <!-- Google fonts -->
@@ -30,9 +30,7 @@
     <link rel="stylesheet" href="assets/css/uikit.css">
 
     <!-- Libs -->
-    <link rel="stylesheet" href="assets/libs/perfect-scrollbar/perfect-scrollbar.css">
-    <link rel="stylesheet" href="assets/libs/flot/flot.css">
-
+  
 </head>
 
 <body>
@@ -85,11 +83,7 @@
                                 </a>
                                 
                             </li>
-                            <!-- <li class="sidenav-item">
-                                <a href="bui_badges.html" class="sidenav-link">
-                                    <div>Badges</div>
-                                </a>
-                            </li> -->
+                          
                         </ul>
                     </li>
                     <li class="sidenav-item">
@@ -121,11 +115,7 @@
                                     <div>Ajouter un Produit</div>
                                 </a>
                             </li>
-                            <li class="sidenav-item">
-                                <a href="#" class="sidenav-link">
-                                    <div>Lists de produits</div>
-                                </a>
-                            </li>
+                          
                         </ul>
                     </li>
                     <li class="sidenav-item">
@@ -153,7 +143,7 @@
                         </a>
                         <ul class="sidenav-menu">
                             <li class="sidenav-item">
-                                <a href="bui_alert.html" class="sidenav-link">
+                                <a href="#addtable" data-toggle="modal"class="sidenav-link">
                                     <div>Ajouter un Service à table</div>
                                 </a>
                             </li>
@@ -241,12 +231,15 @@
                       
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table table-bordered" id="dataTable"  cellspacing="0">
                                     <thead>
                                         <tr>
+                                            <th>image</th>
                                             <th>nom de produit</th>
                                             <th>prix</th>
+                                            <th>point fidelite</th>
                                             <th>ingrediens</th>
+                                            <th>actions</th>
                                            
                                           
                                         </tr>
@@ -273,7 +266,7 @@
                     <nav class="layout-footer footer bg-white">
                         <div class="container-fluid d-flex flex-wrap justify-content-between text-center container-p-x pb-3">
                             <div class="pt-3">
-                                <span class="footer-text font-weight-semibold">&copy; <a href="https://srthemesvilla.com" class="footer-link" target="_blank">Srthemesvilla</a></span>
+                                <span class="footer-text font-weight-semibold">&copy; <a class="footer-link" target="_blank">aminehr</a></span>
                             </div>
                            
                         </div>
@@ -295,21 +288,21 @@
     <div id="addcategory" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
-            <form method="POST" action="/category/add">
+            <form >
               <div class="modal-header">						
                 <h4 class="modal-title">ajouter une categorie</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <button type="button" class="close" id="close" data-dismiss="modal" aria-hidden="true">&times;</button>
               </div>
               <div class="modal-body">	
                                 
                 <div class="form-group">
                   <label>Nom de categorie</label>
-                  <input type="text" name="nom" class="form-control" >
+                  <input type="text" id="nom"  class="form-control" >
                 </div>
             
               <div class="modal-footer">
    
-                <button type="submit" class="btn btn-warning" >add</button>
+                <button type="submit" id="addc" class="btn btn-warning" >add</button>
               </div>
             </form>
             </div>
@@ -322,7 +315,7 @@
             <div class="modal-dialog">
               <div class="modal-content">
              
-                <form method="POST" action="/sousCategory/add">
+                <form >
                    
                   <div class="modal-header">						
                     <h4 class="modal-title">ajouter un sous categorie</h4>
@@ -333,12 +326,12 @@
                     <div class="form-group">
                       <label>Nom de sous categorie</label>
                     
-                      <input type="text" 	 name="nom" class="form-control" >
+                      <input type="text" 	id="noms"  class="form-control" >
                     </div>
-                    <select  class="form-control" id="menu" name="category"></select>
+                    <select  class="form-control" id="category" ></select>
                   <div class="modal-footer">
                     
-                    <button type="submit" class="btn btn-warning" >add</button>
+                    <button type="submit"  id="adds" class="btn btn-warning" >add</button>
                   </div>
            
                 </form>
@@ -351,7 +344,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
          
-            <form method="POST" action="/product/add">
+            <form >
                
               <div class="modal-header">						
                 <h4 class="modal-title">ajouter un produit</h4>
@@ -362,21 +355,80 @@
                 <div class="form-group">
                   <label>Nom de produit</label>
                 
-                  <input type="text" name="nomx" class="form-control" >
+                  <input type="text" id="nomp" class="form-control" >
                 </div>
                 <div class="form-group">
                     <label>Prix</label>
                   
-                    <input type="text" name="prix" class="form-control" >
+                    <input type="text" id="prix" class="form-control" >
                   </div>
                   <div class="form-group">
                     <label>Ingrediens</label>
                   
-                    <input type="text" name="ingrediens" class="form-control" >
+                    <input type="text" id="ingrediens" class="form-control" >
                   </div>
-                <select  class="form-control" id="scategory" name="sousCategory"></select>
+                  <div class="form-group">
+                    <label>point fidelite</label>
+                  
+                    <input type="text" id="pointfidelite" class="form-control" >
+                  </div>
+                  <div class="form-group">
+                    <label>url image</label>
+                  
+                    <input type="text" id="img" class="form-control" >
+                  </div>
+                <select  class="form-control" id="scategory" ></select>
               <div class="modal-footer">
-                <button type="submit" class="btn btn-warning" >add</button>
+                <button type="submit" class="btn btn-warning" id="addpro" >add</button>
+              </div>
+       
+            </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <div id="updateproduct" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+         
+            <form >
+               
+              <div class="modal-header">						
+                <h4 class="modal-title">modifier un produit</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              </div>
+              <div class="modal-body">	
+                                
+                <div class="form-group">
+                  <label>Nom de produit</label>
+                
+                  <input type="text" value="" id="updatenomp" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label>Prix</label>
+                  
+                    <input type="text" id="updateprix" class="form-control" >
+                  </div>
+                  <div class="form-group">
+                    <label>Ingrediens</label>
+                  
+                    <input type="text" id="updateingrediens" class="form-control" >
+                  </div>
+                  <div class="form-group">
+                    <label>point fidelite</label>
+                  
+                    <input type="text" id="updatepointfidelite" class="form-control" >
+                  </div>
+                  <div class="form-group">
+                    <label>url image</label>
+                  
+                    <input type="text" id="updateimg" class="form-control" >
+                  </div>
+                <select  class="form-control" id="updatescategory" ></select>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-warning" id="updatepro" >add</button>
               </div>
        
             </form>
@@ -390,10 +442,10 @@
         <div class="modal-dialog">
           <div class="modal-content">
          
-            <form method="POST" action="/Codepromo/add">
+            <form >
                
               <div class="modal-header">						
-                <h4 class="modal-title">ajouter un produit</h4>
+                <h4 class="modal-title">ajouter un code promo</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
               </div>
               <div class="modal-body">	
@@ -401,16 +453,45 @@
                 <div class="form-group">
                   <label>code promo</label>
                 
-                  <input type="text" name="code" class="form-control" >
+                  <input type="text"  id="code" class="form-control" >
                 </div>
                 <div class="form-group">
                     <label>Pourcentage</label>
                   
-                    <input type="text" name="pourcentage" class="form-control" >
+                    <input type="text" id="pourcentage" class="form-control" >
                   </div>
                   
               <div class="modal-footer">
-                <button type="submit" class="btn btn-warning" >add</button>
+                <button type="submit" class="btn btn-warning" id="addp"  >add</button>
+              </div>
+       
+            </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <div id="addtable" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+         
+            <form >
+               
+              <div class="modal-header">						
+                <h4 class="modal-title">ajouter une table</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              </div>
+              <div class="modal-body">	
+                                
+                <div class="form-group">
+                  <label>num table</label>
+                
+                  <input type="text"  id="numTable" class="form-control" >
+                </div>
+                  
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-warning" id="addt"  >add</button>
               </div>
        
             </form>
@@ -423,43 +504,43 @@
 
     <!-- Core scripts -->
     <script >
-//        let dropdown = document.getElementById('menu');
-// dropdown.length = 0;
+       let dropdown = document.getElementById('category');
+dropdown.length = 0;
 
 
-// let defaultOption = document.createElement('option');
-// defaultOption.text = 'Choisissez une categorie';
+let defaultOption = document.createElement('option');
+defaultOption.text = 'Choisissez une categorie';
 
-// dropdown.add(defaultOption);
-// dropdown.selectedIndex = 0;
+dropdown.add(defaultOption);
+dropdown.selectedIndex = 0;
 
 
 
-// fetch('http://localhost:8080/category')  
-//   .then(  
-//     function(response) {  
-//       if (response.status !== 200) {  
-//         console.warn('Looks like there was a problem. Status Code: ' + 
-//           response.status);  
-//         return;  
-//       }
+fetch('http://localhost:8080/category')  
+  .then(  
+    function(response) {  
+      if (response.status !== 200) {  
+        console.warn('Looks like there was a problem. Status Code: ' + 
+          response.status);  
+        return;  
+      }
 
-//       // Examine the text in the response  
-//       response.json().then(function(data) {  
-//         let option;
+      // Examine the text in the response  
+      response.json().then(function(data) {  
+        let option;
     
-//     	for (let i = 0; i < data.length; i++) {
-//           option = document.createElement('option');
-//       	  option.text = data[i].nom;
-//       	  option.value = data[i]._id;
-//       	  dropdown.add(option);
-//     	}    
-//       });  
-//     }  
-//   )  
-//   .catch(function(err) {  
-//     console.error('Fetch Error -', err);  
-//   }); 
+    	for (let i = 0; i < data.length; i++) {
+          option = document.createElement('option');
+      	  option.text = data[i].nom;
+      	  option.value = data[i]._id;
+      	  dropdown.add(option);
+    	}    
+      });  
+    }  
+  )  
+  .catch(function(err) {  
+    console.error('Fetch Error -', err);  
+  }); 
 
   let dropdowns = document.getElementById('scategory');
 dropdowns.length = 0;
@@ -499,37 +580,61 @@ fetch('http://localhost:8080/sousCategory')
     console.error('Fetch Error -', err);  
   }); 
 
+  let dropdownsup = document.getElementById('updatescategory');
+dropdownsup.length = 0;
 
-  fetch_product();
-  async function fetch_product() {
-    
-    const response = await fetch('http://localhost:8080/product').then(
-      res=>{
-        res.json().then(
-          data=>{
-            console.log(data);
-            if(data.length > 0){
-              var temp = "";
 
-              data.forEach((u)=>{
-                temp +="<tr>";
-                temp +="<td>"+u.nom+"</td>";
-                temp +="<td>"+u.prix+"</td>";
-                temp +="<td>"+u.ingrediens+"</td></tr>";
-              })
-              document.getElementById("list").innerHTML = temp;
-            }
-          }
-        )
+let defaultOptionsup = document.createElement('option');
+defaultOptionsup.text = 'Choisissez une sous categorie';
+
+dropdownsup.add(defaultOptionsup);
+dropdownsup.selectedIndex = 0;
+
+
+
+fetch('http://localhost:8080/sousCategory')  
+  .then(  
+    function(response) {  
+      if (response.status !== 200) {  
+        console.warn('Looks like there was a problem. Status Code: ' + 
+          response.status);  
+        return;  
       }
-    )
-     
 
+      // Examine the text in the response  
+      response.json().then(function(data) {  
+        let optionsup;
     
+    	for (let i = 0; i < data.length; i++) {
+          optionsup = document.createElement('option');
+      	  optionsup.text = data[i].nom;
+      	  optionsup.value = data[i]._id;
+      	  dropdownsup.add(optionsup);
+    	}    
+      });  
+    }  
+  )  
+  .catch(function(err) {  
+    console.error('Fetch Error -', err);  
+  }); 
+
+
+
+ 
+  
+   
     
-    } 
 
     </script>
+    
+     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+     <script src="js/addsouscategory.js" ></script>
+    <script src="js/addcategory.js" ></script>
+    <script src="js/addcodepromo.js" ></script>
+    <script src="js/addtable.js" ></script>
+    <script src="js/products.js" ></script>
+   
+    
     <script src="assets/js/pace.js"></script>
     <script src="assets/js/jquery-3.3.1.min.js"></script>
     <script src="assets/libs/popper/popper.js"></script>
@@ -539,17 +644,10 @@ fetch('http://localhost:8080/sousCategory')
     <script src="assets/js/material-ripple.js"></script>
 
     <!-- Libs -->
-    <script src="assets/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="assets/libs/eve/eve.js"></script>
-    <script src="assets/libs/flot/flot.js"></script>
-    <script src="assets/libs/flot/curvedLines.js"></script>
-    <script src="assets/libs/chart-am4/core.js"></script>
-    <script src="assets/libs/chart-am4/charts.js"></script>
-    <script src="assets/libs/chart-am4/animated.js"></script>
 
     <!-- Demo -->
     <script src="assets/js/demo.js"></script><script src="assets/js/analytics.js"></script>
-    <script src="assets/js/pages/dashboards_index.js"></script>
+    <!-- <script src="assets/js/pages/dashboards_index.js"></script> -->
 </body>
 
 

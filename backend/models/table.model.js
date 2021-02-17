@@ -6,11 +6,12 @@ const Table = new Schema(
   {
     numTable: {
       type: Number,
+      required: true,
     },
-    isOcuped :{
+    isOcuped: {
         type: Boolean,
-        defult : false
-    }
+        default : false,
+    },
     
   },
   {
@@ -18,5 +19,5 @@ const Table = new Schema(
 }
 );
 
-const TableList = mongoose.model("Table", Table);
+const TableList = mongoose.model("table", Table);
 module.exports = TableList;

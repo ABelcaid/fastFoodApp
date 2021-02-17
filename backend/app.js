@@ -25,7 +25,7 @@ app.use(express.static(__dirname + 'views'));
 
 
 mongoose.connect('mongodb://localhost:27017/fastFoodDB' , {
-  useNewUrlParser: true
+  useNewUrlParser: true, useUnifiedTopology: true
 }).then(() => {
   console.log("Successfully connected to the database");    
 }).catch(err => {
@@ -42,11 +42,13 @@ const categoryRoute = require('./routes/category');
 const sousCategoryRoute = require('./routes/sousCategory');
 const productRoute = require('./routes/product');
 const codepromoRoute = require('./routes/codepromo');
+const tableRoute = require('./routes/table');
 
 app.use('/category' ,categoryRoute);
 app.use('/sousCategory' ,sousCategoryRoute);
 app.use('/product' ,productRoute);
 app.use('/Codepromo' ,codepromoRoute);
+app.use('/table' ,tableRoute);
 
 
 

@@ -2517,6 +2517,7 @@ textarea.form-control {
 }
 .btn:not(:disabled):not(.disabled) {
   cursor: pointer;
+  /* display: none; */
 }
 
 a.btn.disabled,

@@ -40,7 +40,26 @@ router.route("/add").post((req, res) => {
   });
 
 
+
+  router.route("/:id").get((req, res) => {
+    Category.findById(req.params.id)
+        .then((category) => res.json(category))
+        .catch((err) => res.status(400).json("Error :" + err));
+});
   
 
+
+router.route("/:id").put((req, res) => {
+  Category.findById(req.params.id)
+      .then((cat) => {
+          cat.nom = req.body.nom;
+
+          cat
+              .save()
+              .then(() => res.json("cat successfully updated"))
+              .catch((err) => res.status(400).json("Error :" + err));
+      })
+      .catch((err) => res.status(400).json("Error :" + err));
+});
 
 module.exports = router;

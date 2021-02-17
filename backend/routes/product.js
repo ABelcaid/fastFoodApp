@@ -20,12 +20,12 @@ router.get('/showAll', (req,res) =>{
 });
 
 
-router.get('/:idSousCtg', (req,res) =>{
+// router.get('/:idSousCtg', (req,res) =>{
 
-  Product.find({sousCategory: `${req.params.idSousCtg}`})
-  .then((Product) => res.json(Product))
-  .catch((err) => res.status(400).json("Error :" + err));
-});
+//   Product.find({sousCategory: `${req.params.idSousCtg}`})
+//   .then((Product) => res.json(Product))
+//   .catch((err) => res.status(400).json("Error :" + err));
+// });
 
 
 router.route("/add").post((req, res) => {
@@ -33,7 +33,8 @@ router.route("/add").post((req, res) => {
     const prix = req.body.prix;
     const ingrediens = req.body.ingrediens;
     const sousCategory = req.body.sousCategory;
-
+    const pointfidelite = req.body.pointfidelite;
+    const img = req.body.img;
   
    
   
@@ -42,7 +43,9 @@ router.route("/add").post((req, res) => {
       nom,
       prix,
       ingrediens,
-      sousCategory
+      sousCategory,
+      pointfidelite,
+      img
 
      
     });
@@ -53,5 +56,43 @@ router.route("/add").post((req, res) => {
       .catch((err) =>  res.status(400).json("Error :" + err));
   });
 
+
+  router.route("/:id").get((req, res) => {
+
+    console.log(req.params.id);
+    Product.findById(req.params.id)
+        .then((Product) => res.json(Product))
+        .catch((err) => res.status(400).json("Error :" + err));
+});
+  
+
+
+router.route("/:id").put((req, res) => {
+  Product.findById(req.params.id)
+      .then((cat) => {
+          cat.nom = req.body.nom;
+          cat.prix = req.body.prix;
+          cat.ingrediens = req.body.ingrediens;
+          cat.sousCategory = req.body.sousCategory;
+          cat.pointfidelite = req.body.pointfidelite;
+          cat.img = req.body.img;
+         
+         
+
+          cat
+              .save()
+              .then(() => res.json("product successfully updated"))
+              .catch((err) => res.status(400).json("Error :" + err));
+      })
+      .catch((err) => res.status(400).json("Error :" + err));
+});
+
+router.route("/delete/:id").delete((req, res) => {
+
+  console.log(req.params.id);
+  Product.findByIdAndRemove(req.params.id)
+      .then(() => res.json("product successfully deleted"))
+      .catch((err) => res.status(400).json("Error :" + err));
+});
 
 module.exports = router;
